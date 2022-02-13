@@ -21,6 +21,7 @@ p {
     font-family: 'Karma', serif;
     padding: 30px 190px 120px;
     text-align: center;
+    font-size: 16px;
 }
 
 p#logo{
@@ -110,17 +111,17 @@ nav ul li{
     margin: 0 5px;
 }
 nav ul li a{
-    color: black;
+    color: white;
     line-height: 70px;
     text-decoration: none;
     font-size: 18px;
     padding: 8px 15px;
 }
 nav ul li a:hover{
-    color: #76846F;
+    color: #4b5c49;
     border-radius: 5px;
-    box-shadow:  0 0 5px #76846F,
-    0 0 10px #76846F;
+    box-shadow:  0 0 5px #4b5c49,
+    0 0 10px #4b5c49;
 }
 nav ul ul li a:hover{
     box-shadow: none;
@@ -152,12 +153,14 @@ nav ul ul li{
 
 }
 nav ul ul li:hover {
-    background-color: #76846F;
+    box-shadow:  0 0 5px #4b5c49,
+    0 0 10px #4b5c49;
+    color: #4b5c49;
 
 }
 nav ul ul li a{
     line-height: 50px;
-    color: #76846F;
+    color: white;
 }
 
 
@@ -197,7 +200,7 @@ nav ul ul ul li{
     }
     .show{
         display: block;
-        color: #76846F;
+        color: #4b5c49;
         font-size: 18px;
         padding: 0 15px;
         line-height: 70px;
@@ -486,6 +489,10 @@ img#cer:hover, img#oer:hover, img#hzlearn:hover, img#studievoortgang:hover, img#
     grid-row-gap: 10px;
     justify-content: left;
 
+}
+
+.banner-home{
+    margin-top: 0px;
 }
 
 .image-container-banner-home{

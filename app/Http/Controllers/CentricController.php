@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-class ProfessionController extends Controller
+
+class CentricController extends Controller
 {
     public function show()
     {
-        return view('profession');
+        return view('centric');
     }
 }

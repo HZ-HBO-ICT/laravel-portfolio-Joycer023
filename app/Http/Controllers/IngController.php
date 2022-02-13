@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-class ProfessionController extends Controller
+class IngController extends Controller
 {
     public function show()
     {
-        return view('profession');
+        return view('ing');
     }
 }
