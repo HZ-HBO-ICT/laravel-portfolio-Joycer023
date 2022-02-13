@@ -49,9 +49,9 @@
         </h2>
         <hr>
         <div class='imagesProfile'>
-            <img id='photo1Profile' src="public/img/me.jpg" alt='Photo of myself'>
-            <img id='photo2Profile' src='public/img/longboard.JPG' alt='Photo of a dessert'>
-            <img id='photo3Profile' src='public/img/dessert.jpg' alt='photo of my longboard'>
+            <img id='photo1Profile' src="{{ asset('img/me.jpg') }}" alt='Photo of myself'>
+            <img id='photo2Profile' src="{{ asset('img/dessert.jpg') }}" alt='Photo of a dessert'>
+            <img id='photo3Profile' src="{{ asset('img/longboard.JPG') }}" alt='photo of my longboard'>
         </div>
     </div>
 </div>
