@@ -93,7 +93,6 @@
             </td>
             <td id="cijfer">-
             </td>
-            </tr>
             <tr>
                 <td rowspan="5" id="blok">3
                 </td>
@@ -130,7 +129,7 @@
             <tr>
                 <td rowspan="2">Professional Skills 2
                 </td>
-                <td rowspan="2"id="ec">2.5 EC
+                <td rowspan="2" id="ec">2.5 EC
                 </td>
                 <td> Portfolio Exam
                 </td>
@@ -170,7 +169,7 @@
             <tr>
                 <td rowspan="2">Professional Skills 3
                 </td>
-                <td rowspan="2"id="ec">2.5 EC
+                <td rowspan="2" id="ec">2.5 EC
                 </td>
                 <td> Portfolio Exam
                 </td>
@@ -233,7 +232,7 @@
             <div class="row">
                 <div class="column" >
                     <div class="card">
-                        <img src="checklist.png" id="cer">
+                        <img src="{{ asset('img/checklist.png') }}" alt="checklist" id="cer">
                         <h3>CER
                         </h3>
                     </div>
@@ -242,7 +241,7 @@
         <a href="https://hz.nl/uploads/documents/Regelingen/NL/Uitvoeringsregeling-OER-HBO-ICT-Voltijd-2019-2020.pdf" target="_blank">
             <div class="column">
                 <div class="card">
-                    <img src="exam.png" id="oer">
+                    <img src="{{ asset('img/exam.png') }}" alt="exam image" id="oer">
                     <h3>OER
                     </h3>
                 </div>
@@ -251,7 +250,7 @@
         <a href="https://learn.hz.nl" target="_blank">
             <div class="column">
                 <div class="card">
-                    <img src="class.png" id="hzlearn">
+                    <img src="{{ asset('img/class.png') }}" alt="class image" id="hzlearn">
                     <h3>HZ LEARN
                     </h3>
                 </div>
@@ -260,7 +259,7 @@
         <a href="https://apps.hz.nl/angular/studievoortgang/studiestatus" target="_blank">
             <div class="column">
                 <div class="card">
-                    <img src="presentation.png" id="studievoortgang">
+                    <img src="{{ asset('img/presentation.png') }}" alt="presentation" id="studievoortgang">
                     <h3>STUDIEVOORTGANG
                     </h3>
                 </div>
@@ -269,16 +268,16 @@
         <a href="https://teams.microsoft.com/l/team/19%3a2e2afa0286b04932be16cb8ad2d9d2c0%40thread.skype/conversations?groupId=95bddebc-a340-4d88-81fc-b80e0bfc70c3&tenantId=4c16deb3-342d-4fca-bcd5-b1429308034c" target="_blank">
             <div class="column">
                 <div class="card">
-                    <img src="teams.png" id="teams">
+                    <img src="{{ asset('img/teams.png') }}" alt="teams logo" id="teams">
                     <h3>TEAMS EERSTE JAAR
                     </h3>
                 </div>
             </div>
         </a>
-        <a href="https://github.com/joycer023"target="_blank">
+        <a href="https://github.com/joycer023" target="_blank">
             <div class="column">
                 <div class="card">
-                    <img src="github.png" id="github">
+                    <img src="{{ asset('img/github.png') }}" alt="github" id="github">
                     <h3>GITHUB
                     </h3>
                 </div>
@@ -286,7 +285,6 @@
         </a>
     </div>
 </div>
-</div>
-</div>
+
 
 @include('partials.foot')

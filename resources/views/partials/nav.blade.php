@@ -23,7 +23,7 @@
                 <li><a href="veracode">VeraCode</a></li>
             </ul>
         </li>
-        <li><a href="motivation.html">Motivation</a></li>
-        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="motivation">Motivation</a></li>
+        <li><a href="faq">FAQ</a></li>
     </ul>
 </nav>

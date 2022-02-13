@@ -80,4 +80,4 @@
 </div>
 </body>
 
-@include('partials.head')
+@include('partials.foot')
