@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
-class BolController
+class BolController extends Controller
 {
-
+    public function show()
+    {
+        return view('bol');
+    }
 }
