@@ -15,7 +15,15 @@
             </div>
         </div>
     </div>
-    <div class='whiteBlock'>
+
+    <ul>
+        @foreach($faqs as $faq)
+            <li>{{ $faq->question}}</li>
+            <li>{{ $faq->answer}}</li>
+        @endforeach
+    </ul>
+
+   {{-- <div class='whiteBlock'>
         <h2>Technisch
         </h2>
         <hr>
@@ -412,6 +420,6 @@
             </div>
         </div>
     </div>
-</div>
+</div>--}}
 
 @include('partials.foot')
