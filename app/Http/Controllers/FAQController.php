@@ -11,7 +11,7 @@ class FAQController extends Controller
     */
     public function show()
     {
-        return view('faq',[
+        return view('faq', [
             'faqs'=>Faq::all()
         ]);
     }
