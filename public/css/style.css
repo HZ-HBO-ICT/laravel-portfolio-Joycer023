@@ -177,6 +177,10 @@ nav ul ul ul li{
     margin-left: 40px;
 }
 
+.current_page_item:active {
+    background: #384436;
+    color: white;
+}
 
 @media all and (max-width: 968px) {
 

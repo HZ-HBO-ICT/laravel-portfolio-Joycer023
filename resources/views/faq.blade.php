@@ -1,4 +1,6 @@
-@include('partials.head')
+@extends('layout')
+
+@section('content')
 
 <div class="grid-container">
     <div class="grid-item1">
@@ -422,4 +424,4 @@
     </div>
 </div>--}}
 
-@include('partials.foot')
+@endsection
