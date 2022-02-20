@@ -6,7 +6,7 @@
     </title>
     <link href="https://fonts.googleapis.com/css2?family=Crete+Round&family=EB+Garamond&family=Karma:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href=" {{ asset('css/style.css') }}"/>
+    <link rel="stylesheet" type="text/css" href=" {{ asset('/css/style.css') }}"/>
 
 </head>
 <header>
@@ -36,6 +36,7 @@
                 </ul>
             </li>
             <li><a href="motivation">Motivation</a></li>
+            <li><a href="articles">Blog</a></li>
             <li><a href="faq">FAQ</a></li>
         </ul>
     </nav>

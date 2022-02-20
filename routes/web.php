@@ -16,12 +16,27 @@ use App\Http\Controllers\YoursurpriseController;
 use App\Http\Controllers\VeracodeController;
 use App\Http\Controllers\MotivationController;
 use App\Http\Controllers\FAQController;
+use App\Http\Controllers\ArticlesController;
 
 
 // Routes
 Route::get('/', [WelcomeController::class, 'show']);
 
-Route::get('/profile', [ProfileController::class, 'show']);
+Route::get('/profile', [ProfileController::class, function() {
+    return view('profile', [
+        'articles' => App\Models\Article::latest()->paginate(2)
+    ]);
+}
+]);
+
+Route::get('/articles/{article}', [ArticlesController::class, 'show']);
+
+Route::get('/articles', [ArticlesController::class, function () {
+    return view('articles.index', [
+        'articles' => App\Models\Article::all()
+    ]);
+}
+]);
 
 Route::get('/dashboard', [DashboardController::class, 'show']);
 
@@ -45,7 +60,7 @@ Route::get('/veracode', [VeracodeController::class, 'show']);
 
 Route::get('/motivation', [MotivationController::class, 'show']);
 
-Route::get('/faq', [FAQController::class, 'show']);
-
+Route::get('/faq',
+    [FAQController::class, 'show']);
 
 Route::get('/posts/{post}', [PostController::class, 'show']);

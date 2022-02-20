@@ -1,6 +1,8 @@
-@include('partials.head')
+@extends('layout')
 
-<body class='profession'>
+@section('content')
+
+    <body class='profession'>
 <div class="masthead">
 
     <div class="wrapper">
@@ -92,4 +94,4 @@
 </div>
 </body>
 
-@include('partials.foot')
+@endsection

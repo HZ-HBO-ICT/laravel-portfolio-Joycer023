@@ -14,18 +14,21 @@ h2 {
 
 h3 {
     color: white;
+    text-align: center;
     font-family: 'Karma', serif;
 }
 
 p {
     font-family: 'Karma', serif;
-    padding: 30px 190px 120px;
+    padding: 30px 90px 10px;
     text-align: center;
     font-size: 16px;
 }
 
 p#logo{
     font-size: 16px;
+    text-transform: uppercase;
+    color: white;
 }
 
 header{
@@ -34,12 +37,13 @@ header{
 
 .blockGreen{
     background-color: #76846F;
-    color: white
+    color: white;
 }
 
 hr {
     width: 40%;
 }
+
 
 /*Profile */
 .profile2 {
@@ -63,10 +67,33 @@ ul.profile{
     padding: 120px 10px 120px 120px;
 }
 
-a{
-    color: black;
+a {
+    color: #fff;
+    text-transform: uppercase;
     text-decoration: none;
+    letter-spacing: 0.15em;
+
+    display: inline-block;
+    padding: 15px 20px;
+    position: relative;
 }
+a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #fff;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+a:hover:after {
+    width: 100%;
+    left: 0;
+}
+
 
 /*Navigation Bar*/
 nav{
@@ -144,7 +171,7 @@ nav ul li:hover > ul{
 }
 nav ul ul li{
     position: relative;
-    margin: 0px;
+    margin: 0;
     width: 300px;
     float: none;
     display: list-item;
@@ -185,7 +212,7 @@ nav ul ul ul li{
 @media all and (max-width: 968px) {
 
     nav ul{
-        margin-right: 0px;
+        margin-right: 0;
         float: left;
     }
     nav .logo{
@@ -225,7 +252,7 @@ nav ul ul ul li{
     }
     nav ul ul{
         top: 70px;
-        border-top: 0px;
+        border-top: 0;
         float: none;
         position: static;
         display: none;
@@ -245,7 +272,7 @@ nav ul ul ul li{
         display: block;
     }
     nav ul ul li{
-        border-bottom: 0px;
+        border-bottom: 0;
     }
     span.cancel:before{
         content: '\f00d';
@@ -409,78 +436,39 @@ img#cer:hover, img#oer:hover, img#hzlearn:hover, img#studievoortgang:hover, img#
     position: relative;
     overflow: hidden;
 }
-
-/*ACCORDION FAQ */
+/*Faq Accordion*/
 .accordion {
-    max-width: 1200px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    overflow: hidden;
-    background: #849A84;
-    margin: auto auto 120px;
-}
-
-.accordion__label,
-.accordion__content {
-    padding: 14px 20px;
-}
-
-.accordion__label {
-    display: block;
+    background-color: #76846F;
     color: white;
-    font-weight: 500;
     cursor: pointer;
-    position: relative;
-    transition: background 0.1s;
+    width: 100%;
+    border: solid 1px lightgray;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    padding: 18px 18px 18px 30px;
+
 }
 
-.accordion__label:hover {
-    background: rgba(0, 0, 0, 0.1);
+.active, .accordion:hover {
+    background-color: #76846F;
 }
 
-.accordion__label::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 20px;
-    width: 12px;
-    height: 6px;
-    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%23FFFFFF99;" /></svg>');
-    background-size: contain;
-    transition: transform 0.4s;
+.panel {
+    padding: 0 18px;
+    background-color: #98a98e;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    color: white;
 }
-
-.accordion__content {
-    background: #93AF99;
-    line-height: 1.6;
-    font-size: 0.85em;
-    display: none;
-}
-
-.accordion__input {
-    display: none;
-}
-
-.accordion__input:checked ~ .accordion__content {
-    display: block;
-}
-
-.accordion__input:checked ~ .accordion__label::after {
-    transform: translateY(-50%) rotate(0.5turn);
-}
-
-#parkerenPhoto {
-    margin-left: 350px;
-    width: 40%;
-}
-
 /*Hero Banner */
 .grid-container{
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    grid-column-gap: 0px;
+    grid-column-gap: 0;
     grid-row-gap: 30px;
     justify-content: center;
 }
@@ -496,7 +484,7 @@ img#cer:hover, img#oer:hover, img#hzlearn:hover, img#studievoortgang:hover, img#
 }
 
 .banner-home{
-    margin-top: 0px;
+    margin-top: 0;
 }
 
 .image-container-banner-home{

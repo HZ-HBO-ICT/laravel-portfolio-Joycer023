@@ -55,8 +55,22 @@
             <img id='photo2Profile' src="{{ asset('img/dessert.jpg') }}" alt='Photo of a dessert'>
             <img id='photo3Profile' src="{{ asset('img/longboard.JPG') }}" alt='photo of my longboard'>
         </div>
+        <div class='blockGreen'>
+            <h2>POSTS
+            </h2>
+            <hr>
+            <br>
+            @foreach($articles as $article)
+                <h3>
+                    <a href="/articles/{{$article->id}}">
+                        {{ $article->title }}
+                    </a>
+                </h3>
+                <p>{{ $article->excerpt }}</p>
+                <hr>
+            @endforeach
+        </div>
     </div>
 </div>
-</main>
 
 @endsection

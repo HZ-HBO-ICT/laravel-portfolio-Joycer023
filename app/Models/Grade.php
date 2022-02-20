@@ -12,7 +12,8 @@ class Grade extends Model
     /**
      * Function to add result to the database
      */
-    public function addResult($grade) {
+    public function addResult($grade)
+    {
         if ($grade > $this->best_grade)
         {
             $this->best_grade = $grade;
