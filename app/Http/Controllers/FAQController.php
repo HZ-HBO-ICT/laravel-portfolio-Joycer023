@@ -9,11 +9,11 @@ class FAQController extends Controller
     /*
     * Function to show the faq page
     */
-    public function show()
+    public function show($id)
     {
-        return view('faq', [
-            'faqs'=>Faq::all()
-        ]);
+        $faq = Faq::find($id);
+        return view('faq.show', [
+            'faq' => $faq]);
     }
 
     /*
@@ -52,24 +52,33 @@ class FAQController extends Controller
     /*
      * Show a view to edit an existing resource
      */
-    public function edit()
+    public function edit($id)
     {
-
+        $faq = Faq::find($id);
+        return view('faq.edit', compact('faq'));
     }
 
     /*
      * Persist the edited resource
      */
-    public function update()
+    public function update($id)
     {
+        $faq = Faq::find($id);
 
+        $faq->question = request('question');
+        $faq->answer = request('answer');
+
+        $faq->save();
+
+        return redirect('./faq/' . $faq->id);
     }
 
     /*
      * Delete the resource
      */
-    public function destroy()
+    public function destroy(Faq $faq)
     {
-
+        $faq->delete();
+        return redirect('/faq');
     }
 }

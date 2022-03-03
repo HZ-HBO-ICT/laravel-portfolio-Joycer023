@@ -2,8 +2,6 @@
 
 @section('content')
 
-
-
     <div class="grid-container">
         <div class="grid-item1">
             <div class= "image-container-banner-faq">
@@ -20,20 +18,14 @@
             </div>
         </div>
 
-        {{--    <ul>
-                @foreach($faqs as $faq)
-                    <li>{{ $faq->question}}</li>
-                    <li>{{ $faq->answer}}</li>
-                @endforeach
-            </ul>--}}
 
         <div class='whiteBlock'>
             <h1>Here you find all the FAQs</h1>
-            @foreach($faqs as $faq)
-                <button class="accordion"> {{ $faq->question }} </button>
+            @foreach($faq as $faqs)
+                <button class="accordion"> {{ $faqs->question }} </button>
                 <div class="panel">
                     <p>
-                        {{ $faq->answer }}
+                        {{ $faqs->answer }}
                     </p>
                 </div>
             @endforeach

@@ -54,9 +54,15 @@ Route::get('/motivation', [MotivationController::class, 'show']);
 Route::get('/posts/{post}', [PostController::class, 'show']);
 
 //faq
-Route::get('/faq', [FAQController::class, 'show']);
+Route::get('/faq', [FAQController::class, function () {
+    return view('faq.index', [
+        'faq' => App\Models\Faq::all()
+    ]);
+}
+]);
 Route::post('/faq', [FAQController::class, 'store']);
 Route::get('/faq/create', [FAQController::class, 'create']);
+Route::get('/faq/{faq}', [FAQController::class, 'show']);
 Route::get('/faq/{faq}/edit', [FAQController::class, 'edit']);
 Route::put('/faq/{faq}', [FAQController::class, 'update']);
 Route::delete('/faq/{faq}', [FAQController::class, 'destroy']);
