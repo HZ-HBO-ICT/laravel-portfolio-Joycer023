@@ -29,15 +29,6 @@ Route::get('/profile', [ProfileController::class, function() {
 }
 ]);
 
-Route::get('/articles/{article}', [ArticlesController::class, 'show']);
-
-Route::get('/articles', [ArticlesController::class, function () {
-    return view('articles.index', [
-        'articles' => App\Models\Article::all()
-    ]);
-}
-]);
-
 Route::get('/dashboard', [DashboardController::class, 'show']);
 
 Route::get('/profession', [ProfessionController::class, 'show']);
@@ -60,7 +51,26 @@ Route::get('/veracode', [VeracodeController::class, 'show']);
 
 Route::get('/motivation', [MotivationController::class, 'show']);
 
-Route::get('/faq',
-    [FAQController::class, 'show']);
-
 Route::get('/posts/{post}', [PostController::class, 'show']);
+
+//faq
+Route::get('/faq', [FAQController::class, 'show']);
+Route::post('/faq', [FAQController::class, 'store']);
+Route::get('/faq/create', [FAQController::class, 'create']);
+Route::get('/faq/{faq}/edit', [FAQController::class, 'edit']);
+Route::put('/faq/{faq}', [FAQController::class, 'update']);
+Route::delete('/faq/{faq}', [FAQController::class, 'destroy']);
+
+// Article page
+Route::get('/articles', [ArticlesController::class, function () {
+    return view('articles.index', [
+        'articles' => App\Models\Article::all()
+    ]);
+}
+]);
+Route::post('/articles', [ArticlesController::class, 'store']);
+Route::get('/articles/create', [ArticlesController::class, 'create']);
+Route::get('/articles/{article}', [ArticlesController::class, 'show']);
+Route::get('/articles/{article}/edit', [ArticlesController::class, 'edit']);
+Route::put('/articles/{article}', [ArticlesController::class, 'update']);
+Route::delete('/articles/{article}', [ArticlesController::class, 'destroy']);

@@ -20,13 +20,6 @@
         </div>
     </div>
 
-{{--    <ul>
-        @foreach($faqs as $faq)
-            <li>{{ $faq->question}}</li>
-            <li>{{ $faq->answer}}</li>
-        @endforeach
-    </ul>--}}
-
     <div class='whiteBlock'>
         <h1>Here you find all the FAQs</h1>
         @foreach($faqs as $faq)
