@@ -3,27 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\Faq;
+use Illuminate\Http\Request;
 
 class FAQController extends Controller
 {
     /*
-    * Function to show the faq page
+    * Function to show the articles page.
     */
-    public function show($id)
+    public function show(Faq $faq)
     {
-        $faq = Faq::find($id);
-        return view('faq.show', [
-            'faq' => $faq]);
+        return view('faq.show', ['faq' => $faq]);
     }
-
     /*
-     * Show single resource
-     */
+    * Function to index the articles
+    */
     public function index()
     {
-        $faqs = Faq::latest();
+        $faq = Faq::latest();
 
-        return view('faq.index', ['faqs' => $faqs]);
+        return view('faq.index', ['faq' => $faq]);
     }
 
     /*
@@ -37,40 +35,29 @@ class FAQController extends Controller
     /*
      * Persist the new resource
      */
-    public function store()
+    public function store(Request $request)
     {
-        $faq = new Faq();
+        Faq::create($this->validateFaq($request));
 
-        $faq->question = request('question');
-        $faq->answer = request('answer');
-
-        $faq->save();
-
-        return redirect('./faq');
+        return redirect('/faq');
     }
 
     /*
      * Show a view to edit an existing resource
      */
-    public function edit($id)
+    public function edit(Faq $faq)
     {
-        $faq = Faq::find($id);
         return view('faq.edit', compact('faq'));
     }
 
     /*
      * Persist the edited resource
      */
-    public function update($id)
+    public function update(Request $request, Faq $faq)
     {
-        $faq = Faq::find($id);
+        $faq->update($this->validateFaq($request));
 
-        $faq->question = request('question');
-        $faq->answer = request('answer');
-
-        $faq->save();
-
-        return redirect('./faq/' . $faq->id);
+        return redirect('/faq/' . $faq->id);
     }
 
     /*
@@ -81,4 +68,16 @@ class FAQController extends Controller
         $faq->delete();
         return redirect('/faq');
     }
+
+    /**
+     * @return array
+     */
+    public function validateFaq(Request $request): array
+    {
+        return $request->validate([
+            'question' => 'required',
+            'answer' => 'required',
+        ]);
+    }
 }
+

@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use http\Env\Request;
 
 class ArticlesController extends Controller
 {
     /*
     * Function to show the articles page.
     */
-    public function show($id)
+    public function show(Article $article)
     {
-        $article = Article::find($id);
         return view('articles.show', ['article' => $article]);
     }
     /*
@@ -35,14 +35,9 @@ class ArticlesController extends Controller
     /*
      * Persist the new resource
      */
-    public function store()
+    public function store(Request $request)
     {
-        $article = new Article();
-
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-        $article->save();
+        Article::create($this->validateArticle($request));
 
         return redirect('/articles');
     }
@@ -50,23 +45,17 @@ class ArticlesController extends Controller
     /*
      * Show a view to edit an existing resource
      */
-    public function edit($id)
+    public function edit(Article $article)
     {
-        $article = Article::find($id);
         return view('articles.edit', compact('article'));
     }
 
     /*
      * Persist the edited resource
      */
-    public function update($id)
+    public function update(Request $request, Article $article)
     {
-        $article = Article::find($id);
-
-        $article->title = request('title');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-        $article->save();
+        $article->update($this->validateArticle($request));
 
         return redirect('/articles/' . $article->id);
     }
@@ -78,6 +67,18 @@ class ArticlesController extends Controller
     {
         $article->delete();
         return redirect('/articles');
+    }
+
+    /**
+     * @return array
+     */
+    public function validateArticle(Request $request): array
+    {
+        return $request->validate([
+            'title' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
     }
 }
 
