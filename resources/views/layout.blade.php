@@ -20,6 +20,7 @@
             <li class="{{ Request::path() === '/' ? 'current_page_item' : '' }}"><a href="/" >Home</a></li>
             <li><a href="profile" >Profile</a></li>
             <li><a href="dashboard">Dashboard</a></li>
+            <li><a href="grade">Grades</a></li>
             <li>
                 <label for="btn-1" class="show">Profession +</label>
                 <a href="profession">Profession</a>

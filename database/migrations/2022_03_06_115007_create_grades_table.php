@@ -13,7 +13,7 @@ class CreateGradesTable extends Migration
      */
     public function up()
     {
-        Schema::create('grades', function (Blueprint $table) {
+        Schema::create('grade', function (Blueprint $table) {
             $table->id();
             $table->string('course_name');
             $table->string('test_name');
@@ -33,6 +33,6 @@ class CreateGradesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('grades');
+        Schema::dropIfExists('grade');
     }
 }

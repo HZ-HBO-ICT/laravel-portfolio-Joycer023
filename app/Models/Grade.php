@@ -7,11 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Grade extends Model
 {
-    //use HasFactory;
+    use HasFactory;
 
-    /**
-     * Function to add result to the database
-     */
     public function addResult($grade)
     {
         if ($grade > $this->best_grade) {
@@ -22,4 +19,6 @@ class Grade extends Model
             $this->save();
         }
     }
+
+    public $guarded = [];
 }

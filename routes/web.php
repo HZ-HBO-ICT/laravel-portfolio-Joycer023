@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GradeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\WelcomeController;
@@ -80,3 +81,7 @@ Route::get('/articles/{article}', [ArticlesController::class, 'show']);
 Route::get('/articles/{article}/edit', [ArticlesController::class, 'edit']);
 Route::put('/articles/{article}', [ArticlesController::class, 'update']);
 Route::delete('/articles/{article}', [ArticlesController::class, 'destroy']);
+
+
+// Shows Index Grade page
+Route::resource('grade', GradeController::class);

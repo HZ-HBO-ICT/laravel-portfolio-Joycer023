@@ -14,7 +14,7 @@ class GradeSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('grades')->insert([
+        DB::table('grade')->insert([
             [
                 'course_name' => 'Program and Career Orientation',
                 'test_name' => 'Assessment'

@@ -541,6 +541,15 @@ img#cer:hover, img#oer:hover, img#hzlearn:hover, img#studievoortgang:hover, img#
     position: relative;
 }
 
+.image-container-banner-grade{
+    background-image: url("../img/gradesBanner.jpeg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
 h1.banner-home{
     text-align: center;
     font-size: 72px;
