@@ -1,1 +1,4 @@
 *.sqlite*
+
+#Node Modules
+node_modules/
